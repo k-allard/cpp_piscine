@@ -1,6 +1,6 @@
-NAME = megaphone
+NAME = phonebook
 
-SRCS = main.cpp Megaphone.cpp
+SRCS = main.cpp Phonebook.cpp Contact.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -10,7 +10,7 @@ all: $(NAME)
 
 $(NAME):
 	@clang++ -o $(NAME) $(SRCS) $(FLAGS)
-	@echo "\x1b[32m ./megaphone is ready!\x1b[0m"
+	@echo "\x1b[32m ./phonebook is ready!\x1b[0m"
 
 clean:
 	@rm -rf $(OBJS)
