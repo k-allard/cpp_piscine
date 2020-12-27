@@ -16,8 +16,8 @@ private:
 	std::string meal;
 	std::string underwear_color;
 	std::string secret;
+
 public:
-	int			is_present;
 	void		set_first_name(std::string first_name);
 	void		set_last_name(std::string last_name);
 	void		set_nickname(std::string nickname);

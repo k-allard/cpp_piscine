@@ -1,10 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/27 12:14:41 by kallard           #+#    #+#             */
+/*   Updated: 2020/12/27 12:14:42 by kallard          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Contact.hpp"
 #include <iostream>
-#include <iomanip>      // std::setw
+#include <iomanip>
 
 Contact::Contact()
 {
-	this->is_present = 0;
 	this->first_name = "";
 	this->last_name = "";
 	this->nickname = "";
@@ -40,19 +51,18 @@ void		Contact::print_line()
 
 void		Contact::print_detail()
 {
-	std::cout << first_name << std::endl;
-	std::cout << last_name << std::endl;
-	std::cout << nickname << std::endl;
-	std::cout << login << std::endl;
-	std::cout << address << std::endl;
-	std::cout << email << std::endl;
-	std::cout << phone << std::endl;
-	std::cout << birthday << std::endl;
-	std::cout << meal << std::endl;
-	std::cout << underwear_color << std::endl;
-	std::cout << secret << std::endl;
+	std::cout << "	First name: " << first_name << std::endl;
+	std::cout << "	Last name: " << last_name << std::endl;
+	std::cout << "	Nickname: " << nickname << std::endl;
+	std::cout << "	Login: " << login << std::endl;
+	std::cout << "	Postal address: " << address << std::endl;
+	std::cout << "	Email: " << email << std::endl;
+	std::cout << "	Phone number: " << phone << std::endl;
+	std::cout << "	Birthday date: " << birthday << std::endl;
+	std::cout << "	Favorite meal: " << meal << std::endl;
+	std::cout << "	Underwear color: " << underwear_color << std::endl;
+	std::cout << "	Darkest secret: " << secret << std::endl;
 }
-
 
 void		Contact::set_first_name(std::string first_name)
 {

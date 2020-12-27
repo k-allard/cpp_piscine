@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/12/27 12:14:57 by kallard           #+#    #+#             */
+/*   Updated: 2020/12/27 12:14:58 by kallard          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
 #include "Contact.hpp"
 #include <iostream>
-#include <iomanip>      // std::setw
+#include <iomanip>
 
 
 Phonebook::Phonebook()
