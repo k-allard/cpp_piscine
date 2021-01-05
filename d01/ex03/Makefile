@@ -1,6 +1,6 @@
-NAME = zombie
+NAME = zombiehorde
 
-SRCS = main.cpp Zombie.cpp ZombieEvent.cpp
+SRCS = main.cpp Zombie.cpp ZombieHorde.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -10,7 +10,7 @@ all: $(NAME)
 
 $(NAME):
 	@clang++ -o $(NAME) $(SRCS) $(FLAGS)
-	@echo "\x1b[32m ./zombie is ready!\x1b[0m"
+	@echo "\x1b[32m ./zombiehord is ready!\x1b[0m"
 
 clean:
 	@rm -rf $(OBJS)
