@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/05 21:16:59 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/05 22:21:36 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/06 14:16:59 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Brain::~Brain(){
 	std::cout << "Brain destructed" << std::endl;
 }
 
-std::string Brain::identify(){
+std::string Brain::identify() const{
 	char str[20];
 	sprintf(str, "%p", this);
 	return (std::string(str));

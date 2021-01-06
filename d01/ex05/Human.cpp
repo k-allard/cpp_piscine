@@ -1,19 +1,15 @@
 #include "Brain.hpp"
 #include "Human.hpp"
 
-Human::Human() {
-	this->brain = new Brain(30, 120);
+Human::Human() : brain(30, 120) {}
+
+Human::~Human() {}
+
+std::string Human::identify() const {
+	return(this->brain.identify());
 }
 
-Human::~Human(){
-	delete this->brain;
-}
-
-std::string Human::identify(){
-	return(this->brain->identify());
-}
-
-Brain& Human::getBrain(){
-	Brain& brainRef = *(this->brain);
+const Brain& Human::getBrain() const {
+	const Brain& brainRef = this->brain;
 	return (brainRef);
 }

@@ -7,7 +7,7 @@ class Brain{
 		int _age;
 		int _iq;
 	public :
-		std::string identify();
+		std::string identify() const;
 		Brain(int age, int iq);
 		~Brain();
 };
