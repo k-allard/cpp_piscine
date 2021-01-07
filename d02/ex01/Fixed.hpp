@@ -7,6 +7,9 @@ class	Fixed {
 	private:
 		int					_fixedPointValue;
 		static int const	_numOfFractionalBits = 8;
+		static int const	maxInt = (1 << (sizeof(int) * 8 - 1 - _numOfFractionalBits)) - 1;
+		static int const	minInt = -1 - maxInt;
+	
 	public:
 		Fixed();
 		Fixed( int const intValue);

@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/07 14:57:49 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/07 15:34:39 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,29 @@ Fixed::Fixed() : _fixedPointValue(0) {
 }
 
 Fixed::Fixed( float const floatValue ) {
+	static float const	maxFloat = (float)(maxInt + 1);
+	static float const	minFloat = (float)(minInt - 1);
+
 	std::cout << "Float constructor called" << std::endl;
+	if (floatValue >= maxFloat || floatValue <= minFloat)
+	{
+		std::cerr << "*** ERROR : Invalid float " << floatValue;
+		std::cerr << " : float must be in range (";
+		std::cerr << minFloat << "; " << maxFloat << ")" << std::endl;
+		return ;
+	}
 	_fixedPointValue = (int)roundf(floatValue * (1 << _numOfFractionalBits));
 }
 
 Fixed::Fixed( int const intValue ) {
 	std::cout << "Int constructor called" << std::endl;
+	if (intValue > maxInt || intValue < minInt)
+	{
+		std::cerr << "*** ERROR : Invalid integer " << intValue;
+		std::cerr << " : integer must be in range [";
+		std::cerr << minInt << "; " << maxInt << "]" << std::endl;
+		return ;
+	}
 	_fixedPointValue = intValue << _numOfFractionalBits;
 }
 
