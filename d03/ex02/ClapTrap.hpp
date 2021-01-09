@@ -1,6 +1,5 @@
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
-// #include "FragTrap.hpp"
 #include <iostream>
 
 #include <string>
@@ -17,11 +16,7 @@ class	ClapTrap {
 		int			_rangedAttackDamage;
 		int			_armorDamageReduction;
 		int			getRandomIndex() const;
-		// void		challenge1() const;
-		// void		challenge2() const;
-		// void		challenge3() const;
-		// void		challenge4() const;
-		// void		challenge5() const;
+
 	public:
 		ClapTrap( std::string name );
 		ClapTrap(		
@@ -37,7 +32,6 @@ class	ClapTrap {
 		);
 		ClapTrap( ClapTrap const & src );
 		~ClapTrap();
-
 		ClapTrap & operator=( ClapTrap const & rhs );
 		
 		/***********/
@@ -73,11 +67,6 @@ class	ClapTrap {
 		void meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-		
-		/**************/
-		/* CHALLENGES */
-		/**************/
-		// void challengeNewcomer(FragTrap & newcomer) const;
 };
 
 #endif

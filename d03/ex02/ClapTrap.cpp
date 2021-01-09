@@ -148,21 +148,21 @@ void ClapTrap::set_armorDamageReduction(int armorDamageReduction) {
 /* INTERFACE */
 /*************/
 void ClapTrap::rangedAttack(std::string const & target) {
-	std::cout << "CLAP-9000 " << _name << " attacks " << target;
+	std::cout << _name << " attacks " << target;
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 10;
 }
 
 void ClapTrap::meleeAttack(std::string const & target) {
-	std::cout << "CLAP-9000 " << _name << " hits " << target;
+	std::cout << _name << " hits " << target;
 	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 5;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
-	std::cout << "CLAP-9000 " << _name << " was attacked! ";
+	std::cout << _name << " was attacked! ";
 	std::cout << "Health : [" <<_hitPoints << " --> ";
 	_hitPoints -= amount;
 	if (_hitPoints < 0)
@@ -180,7 +180,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
 }
 
 void ClapTrap::beRepaired(unsigned int amount) {
-	std::cout << "CLAP-9000 " << _name << " was repaired 🏥 + " << amount << " HP! ";
+	std::cout << _name << " was repaired 🏥 + " << amount << " HP! ";
 	std::cout << "Health : [" <<_hitPoints << " --> ";
 	_hitPoints += amount;
 	if (_hitPoints > _maxHitPoints)
