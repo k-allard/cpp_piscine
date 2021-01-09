@@ -151,14 +151,14 @@ void ClapTrap::rangedAttack(std::string const & target) {
 	std::cout << _name << " attacks " << target;
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
-	_energyPoints -= 15;
+	_energyPoints -= 10;
 }
 
 void ClapTrap::meleeAttack(std::string const & target) {
 	std::cout << _name << " hits " << target;
 	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
-	_energyPoints -= 15;
+	_energyPoints -= 5;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
