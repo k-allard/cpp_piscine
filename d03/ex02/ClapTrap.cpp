@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 15:00:29 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 15:00:30 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 15:01:30 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ ClapTrap::ClapTrap(std::string name) : _hitPoints(100),
 	std::cout << "CLAP-9000 (parent for ";
 	std::cout << _name << ") constructed" << std::endl;
 }
-
 
 ClapTrap::ClapTrap(		
 	    int			hitPoints,
