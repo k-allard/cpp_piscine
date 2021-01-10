@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:27 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 17:29:13 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 18:11:56 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ int main( void ) {
 
 	// FragTrap Bob = FragTrap("Bob");
 	// FragTrap Sam = FragTrap("Sam");
-	// FragTrap Din = FragTrap("Din");
+	FragTrap Din = FragTrap("Din");
 	// ScavTrap Lucy = ScavTrap("Lucy");
 	
 	// rangedAttack(Din, Sam);
@@ -110,7 +110,10 @@ int main( void ) {
 
 	SuperTrap Jey = SuperTrap("Jey");
 	// Lucy.challengeNewcomer(Jey);
-
+	
+	vaulthunter_dot_exe(Jey, Din);
+	if (Jey.ninjaShoebox(Din))
+		Din.takeDamage(20);
 	std::cout << "*****************\n* GAME FINISHED *\n*****************" << std::endl;
 	return 0;
 }
