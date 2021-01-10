@@ -11,15 +11,15 @@ class	FragTrap {
 		int 				_maxEnergyPoints;
 		int					_level;
 		std::string			_name;
-		int					_meleeAttackDamage; //Урон от атаки в ближнем бою
-		int					_rangedAttackDamage; //Урон от атаки в дальнем бою
-		int					_armorDamageReduction; //Снижение урона оружия 
+		int					_meleeAttackDamage;
+		int					_rangedAttackDamage;
+		int					_armorDamageReduction;
 		int					getRandomIndex() const;
+
 	public:
 		FragTrap( std::string name );
 		FragTrap( FragTrap const & src );
 		~FragTrap();
-
 		FragTrap & operator=( FragTrap const & rhs );
 		
 		/***********/
@@ -51,22 +51,16 @@ class	FragTrap {
 		/*************/
 		/* INTERFACE */
 		/*************/
-		void rangedAttack(std::string const & target);
-		void meleeAttack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
+		int		rangedAttack(std::string const & target);
+		int		meleeAttack(std::string const & target);
+		void	takeDamage(unsigned int amount);
+		void	beRepaired(unsigned int amount);
 		
 		/******************/
 		/* CUSTOM ATTACKS */
 		/******************/
-		void vaulthunter_dot_exe(std::string const & target);
-		void sweetAttack(std::string const & target);
-		void bulletnatorAttack(std::string const & target);
-		void funnyAttack(std::string const & target);
-		void purposeAttack(std::string const & target);
-		void scaryAttack(std::string const & target);
-		void awesomeAttack(std::string const & target);
-
+		int		vaulthunter_dot_exe(std::string const & target);
+		void	customAttack(std::string const & target);
 };
 
 #endif
