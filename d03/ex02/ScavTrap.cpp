@@ -6,7 +6,7 @@
 
 ScavTrap::ScavTrap(std::string name) : 
 	ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3) {
-	std::cout << "SC4V-TP ";
+	std::cout << "SC4V-TP 🤖 ";
 	std::cout << _name << " constructed" << std::endl;
 }
 
