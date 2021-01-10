@@ -65,6 +65,12 @@ void ScavTrap::challenge5() const {
 	std::cout << "Opening a Vault is the ultimate fight, right?\033[0m" << std::endl;
 }
 
+void ScavTrap::challenge6() const {
+	std::cout << "\033[3mhi! I'm a robot, and I don't like that! Could you help me become human? ";
+	std::cout << "Maybe? I don't wear clothes, but I see humans wearing lots of clothes -- could you get me clothes ";
+	std::cout << "from those bandit guys nearby? I'll wear so many clothes, I'll be the best human ever!\033[0m" << std::endl;
+}
+
 void ScavTrap::challengeNewcomer(FragTrap & newcomer) const {
 	std::cout << "\033[3m< " << _name << ": > Newcomer ";
 	std::cout << newcomer.get_name() << ", \033[0m";
@@ -84,6 +90,11 @@ void ScavTrap::challengeNewcomer(FragTrap & newcomer) const {
 		case 4:
 			challenge5();
 			break;
+		case 5:
+			challenge6();
+			break;
+		default:
+			std::cout << "DEFAULT!!!" << std::endl;
 	}
 }
 
@@ -106,27 +117,34 @@ void ScavTrap::challengeNewcomer(NinjaTrap & newcomer) const {
 		case 4:
 			challenge5();
 			break;
+		case 5:
+			challenge6();
+			break;
 	}
 }
 
 void ScavTrap::challengeNewcomer(SuperTrap & newcomer) const {
-std::cout << "\033[3m< " << _name << ": > Newcomer ";
-std::cout << newcomer.get_name() << ", \033[0m";
-switch (getRandomIndex()) {
-	case 0:
-		challenge1();
-		break;
-	case 1:
-		challenge2();
-		break;
-	case 2:
-		challenge3();
-		break;
-	case 3:
-		challenge4();
-		break;
-	case 4:
-		challenge5();
-		break;
-}
+	int index = getRandomIndex();
+	std::cout << "\033[3m< " << _name << ": > Newcomer ";
+	std::cout << newcomer.get_name() << ", \033[0m";
+	switch (index) {
+		case 0:
+			challenge1();
+			break;
+		case 1:
+			challenge2();
+			break;
+		case 2:
+			challenge3();
+			break;
+		case 3:
+			challenge4();
+			break;
+		case 4:
+			challenge5();
+			break;
+		case 5:
+			challenge6();
+			break;
+	}
 }

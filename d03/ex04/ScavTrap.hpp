@@ -13,6 +13,8 @@ class	ScavTrap : public ClapTrap {
 		void		challenge3() const;
 		void		challenge4() const;
 		void		challenge5() const;
+		void		challenge6() const;
+
 	public:
 		ScavTrap( std::string name );
 		ScavTrap();

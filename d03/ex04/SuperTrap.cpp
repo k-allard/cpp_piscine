@@ -32,7 +32,6 @@ SuperTrap::SuperTrap(std::string name) : ClapTrap(name), NinjaTrap(name), FragTr
 	std::cout << "ranged damage_______" << _rangedAttackDamage << std::endl;
 	std::cout << "armor reduction______" << _armorDamageReduction << std::endl;
 	std::cout << "______________________" << std::endl;
-
 }
 
 SuperTrap::SuperTrap( SuperTrap const & src ) : ClapTrap(src) {

@@ -13,7 +13,15 @@ NinjaTrap::NinjaTrap() :
 }
 
 NinjaTrap::NinjaTrap(std::string name) : 
-	ClapTrap(60, 60, get_defaultEnergyPoints(), get_defaultMaxEnergyPoints(), 1, name, get_defaultMeleeAttackDamage(), 5, 0) {
+	ClapTrap(60,
+			60, 
+			get_defaultEnergyPoints(), 
+			get_defaultMaxEnergyPoints(), 
+			1, 
+			name, 
+			get_defaultMeleeAttackDamage(), 
+			5, 
+			0) {
 	std::cout << "INAC ";
 	std::cout << _name << " constructed" << std::endl;
 }
@@ -46,37 +54,82 @@ int NinjaTrap::get_defaultMeleeAttackDamage() const {
 /*************/
 /*  SHOEBOX  */
 /*************/
-void NinjaTrap::ninjaShoebox(FragTrap & target) {
+int NinjaTrap::ninjaShoebox(FragTrap & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "INAC " << _name << " attacks FR4G-TP " << target.get_name();
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	std::cout << "\033[3m< " << _name << ": > See how our enemies crumble beneath the wheel of the claptrap Robolution! ";
 	std::cout << "\033[0m" << std::endl;
 	_energyPoints -= 15;
+	return 1;
 }
 
-void NinjaTrap::ninjaShoebox(NinjaTrap & target) {
+int NinjaTrap::ninjaShoebox(NinjaTrap & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "INAC " << _name << " attacks FR4G-TP " << target.get_name();
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	std::cout << "\033[3m< " << _name << ": > Another fleshbag falls to the Robolution! ";
 	std::cout << "\033[0m" << std::endl;
 	_energyPoints -= 15;
+	return 1;
 }
 
-void NinjaTrap::ninjaShoebox(ClapTrap & target) {
+int NinjaTrap::ninjaShoebox(ClapTrap & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "INAC " << _name << " attacks FR4G-TP " << target.get_name();
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	std::cout << "\033[3m< " << _name << ": > How do YOU like target practice? Huh? HUH?! ";
 	std::cout << "\033[0m" << std::endl;
 	_energyPoints -= 15;
+	return 1;
 }
-void NinjaTrap::ninjaShoebox(ScavTrap & target) {
+
+int NinjaTrap::ninjaShoebox(ScavTrap & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "INAC " << _name << " attacks SC4V-TP " << target.get_name();
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	std::cout << "\033[3m< " << _name << ": > Target disassembled! ";
 	std::cout << "\033[0m" << std::endl;
 	_energyPoints -= 15;
+	return 1;
 }

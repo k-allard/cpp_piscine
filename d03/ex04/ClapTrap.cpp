@@ -61,7 +61,6 @@ ClapTrap & ClapTrap::operator=( ClapTrap const & rhs ) {
 		this->set_rangedAttackDamage(rhs.get_rangedAttackDamage());
 		this->set_armorDamageReduction(rhs.get_armorDamageReduction());
 	}
-		
 	return *this;
 }
 
@@ -146,18 +145,40 @@ void ClapTrap::set_armorDamageReduction(int armorDamageReduction) {
 /*************/
 /* INTERFACE */
 /*************/
-void ClapTrap::rangedAttack(std::string const & target) {
+int ClapTrap::rangedAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 10) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << _name << " attacks " << target;
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 10;
+	return 1;
 }
 
-void ClapTrap::meleeAttack(std::string const & target) {
+int ClapTrap::meleeAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << _name << " hits " << target;
 	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
-	_energyPoints -= 5;
+	_energyPoints -= 15;
+	return 1;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {
@@ -190,5 +211,5 @@ void ClapTrap::beRepaired(unsigned int amount) {
 }
 
 int ClapTrap::getRandomIndex() const {
-	return (rand() % 6);
+	return (std::rand() % 6);
 }
