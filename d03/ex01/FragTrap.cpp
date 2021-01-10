@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/09 01:21:44 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 14:35:46 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ FragTrap::FragTrap(std::string name) : _hitPoints(100),
 									_meleeAttackDamage(30),
 									_rangedAttackDamage(20),
 									_armorDamageReduction(5) {
-	std::cout << "FR4G-TP ";
+	std::cout << "FR4G-TP 🤖 ";
 	std::cout << _name << " constructed" << std::endl;
 }
 
@@ -136,18 +136,40 @@ void FragTrap::set_armorDamageReduction(int armorDamageReduction) {
 /*************/
 /* INTERFACE */
 /*************/
-void FragTrap::rangedAttack(std::string const & target) {
+int FragTrap::rangedAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 10) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "FR4G-TP " << _name << " attacks " << target;
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 10;
+	return 1;
 }
 
-void FragTrap::meleeAttack(std::string const & target) {
+int FragTrap::meleeAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 5) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "FR4G-TP " << _name << " hits " << target;
 	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 5;
+	return 1;
 }
 
 void FragTrap::takeDamage(unsigned int amount) {
@@ -182,77 +204,50 @@ void FragTrap::beRepaired(unsigned int amount) {
 /******************/
 /* CUSTOM ATTACKS */
 /******************/
-void FragTrap::sweetAttack(std::string const & target) {
+void FragTrap::customAttack(std::string const & target) {
 	std::cout << "FR4G-TP " << _name << " attacks " << target;
 	std::cout << ", causing 25";
 	std::cout << " points of damage!" << std::endl;
-	std::cout << "\033[3m< " << _name << ": > Who needs ammo anyway, am I right?\033[0m 💞 " << std::endl;
-	_energyPoints -= 25;
-}
-
-void FragTrap::bulletnatorAttack(std::string const & target) {
-	std::cout << "\033[3m< " << _name << ": > Step right up, to the Bulletnator 9000!\033[0m" << std::endl;
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << ", causing 25";
-	std::cout << " points of damage!" << std::endl;
-	_energyPoints -= 25;
-}
-
-void FragTrap::funnyAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << ", causing 25";
-	std::cout << " points of damage!" << std::endl;
-	std::cout << "\033[3m< " << _name << ": > Hehehehe, mwaa ha ha ha, MWAA HA HA HA!\033[0m" << std::endl;
-	_energyPoints -= 25;
-}
-
-void FragTrap::purposeAttack(std::string const & target) {
-	std::cout << "\033[3m< " << _name << ": > This is why I was built!\033[0m" << std::endl;
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << ", causing 25";
-	std::cout << " points of damage!" << std::endl;
-	_energyPoints -= 25;
-}
-
-void FragTrap::scaryAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << ", causing 25";
-	std::cout << " points of damage!" << std::endl;
-	std::cout << "\033[3m< " << _name << ": > Is it dead? Can, can I open my eyes now?\033[0m" << std::endl;
-	_energyPoints -= 25;
-}
-
-void FragTrap::awesomeAttack(std::string const & target) {
-	std::cout << "FR4G-TP " << _name << " attacks " << target;
-	std::cout << ", causing 25";
-	std::cout << " points of damage!" << std::endl;
-	std::cout << "\033[3m< " << _name << ": > Don't tell me that wasn't awesome!\033[0m" << std::endl;
-	_energyPoints -= 25;
 }
 
 int FragTrap::getRandomIndex() const {
 	return (rand() % 6);
 }
 
-void FragTrap::vaulthunter_dot_exe(std::string const & target) {
+int FragTrap::vaulthunter_dot_exe(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 25) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
+	customAttack(target);
+	std::cout << "\033[3m< " << _name << ": > ";
 	switch (getRandomIndex()) {
 		case 0:
-			sweetAttack(target);
+			std::cout << "Who needs ammo anyway, am I right? 💞 " << std::endl;
 			break;
 		case 1:
-			bulletnatorAttack(target);
+			std::cout << "Step right up, to the Bulletnator 9000!" << std::endl;
 			break;
 		case 2:
-			funnyAttack(target);
+			std::cout << "Hehehehe, mwaa ha ha ha, MWAA HA HA HA!" << std::endl;
 			break;
 		case 3:
-			purposeAttack(target);
+			std::cout << "This is why I was built!" << std::endl;
 			break;
 		case 4:
-			scaryAttack(target);
+			std::cout << "Is it dead? Can, can I open my eyes now?" << std::endl;
 			break;
 		case 5:
-			awesomeAttack(target);
+			std::cout << "Don't tell me that wasn't awesome!" << std::endl;
 			break;
 	}
+	std::cout << "\033[0m";
+	_energyPoints -= 25;
+	return 1;
 }

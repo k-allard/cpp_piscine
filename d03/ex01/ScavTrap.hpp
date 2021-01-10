@@ -57,8 +57,8 @@ class	ScavTrap {
 		/*************/
 		/* INTERFACE */
 		/*************/
-		void rangedAttack(std::string const & target);
-		void meleeAttack(std::string const & target);
+		int rangedAttack(std::string const & target);
+		int meleeAttack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		

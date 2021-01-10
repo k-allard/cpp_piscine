@@ -13,7 +13,7 @@ ScavTrap::ScavTrap(std::string name) : _hitPoints(100),
 									_meleeAttackDamage(20),
 									_rangedAttackDamage(15),
 									_armorDamageReduction(3) {
-	std::cout << "SC4V-TP ";
+	std::cout << "SC4V-TP 🤖 ";
 	std::cout << _name << " constructed" << std::endl;
 }
 
@@ -126,20 +126,42 @@ void ScavTrap::set_armorDamageReduction(int armorDamageReduction) {
 /*************/
 /* INTERFACE */
 /*************/
-void ScavTrap::rangedAttack(std::string const & target) {
+int ScavTrap::rangedAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 10) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "\033[3m< " << _name << ": > Here, take this!\033[0m" << std::endl;
 	std::cout << "SC4V-TP " << _name << " attacks " << target;
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 10;
+	return 1;
 }
 
-void ScavTrap::meleeAttack(std::string const & target) {
+int ScavTrap::meleeAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 5) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << "\033[3m< " << _name << ": > Let's get this party started!\033[0m" << std::endl;
 	std::cout << "SC4V-TP " << _name << " hits " << target;
 	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 5;
+	return 1;
 }
 
 void ScavTrap::takeDamage(unsigned int amount) {
