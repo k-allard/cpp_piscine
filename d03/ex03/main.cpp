@@ -6,16 +6,16 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:27 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 15:19:56 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 15:22:18 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 #include "NinjaTrap.hpp"
 
+#include <iostream>
 #include <stdlib.h>
 #include <time.h>
 
@@ -47,7 +47,6 @@ void meleeAttack(FragTrap &robot1, FragTrap &robot2) {
 	if (robot1.meleeAttack(robot2.get_name()))
 		robot2.takeDamage(robot1.get_meleeAttackDamage());
 }
-
 
 void meleeAttack(ScavTrap &robot1, FragTrap &robot2) {
 	if (robot1.meleeAttack(robot2.get_name()))
