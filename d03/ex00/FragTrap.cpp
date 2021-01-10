@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 14:22:12 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 21:18:43 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 FragTrap::FragTrap(std::string name) : _hitPoints(100),
 									_maxHitPoints(100),
-									_energyPoints(50),
-									_maxEnergyPoints(50),
+									_energyPoints(100),
+									_maxEnergyPoints(100),
 									_level(1),
 									_name(name),
 									_meleeAttackDamage(30),
