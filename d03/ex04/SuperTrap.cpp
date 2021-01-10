@@ -9,18 +9,29 @@
 
 SuperTrap::SuperTrap(std::string name) : ClapTrap(name), NinjaTrap(name), FragTrap(name)
 {
-	ClapTrap::set_hitPoints(FragTrap::get_hitPoints());
-	ClapTrap::set_maxHitPoints(FragTrap::get_maxHitPoints());
-	ClapTrap::set_energyPoints(NinjaTrap::get_energyPoints());
-	ClapTrap::set_maxEnergyPoints(NinjaTrap::get_maxEnergyPoints());
-	ClapTrap::set_level(1);
-	ClapTrap::set_name(name);
-	ClapTrap::set_meleeAttackDamage(NinjaTrap::get_meleeAttackDamage());
-	ClapTrap::set_rangedAttackDamage(FragTrap::get_rangedAttackDamage());
-	ClapTrap::set_armorDamageReduction(FragTrap::get_armorDamageReduction());
+	_hitPoints = FragTrap::get_defaultHitPoints();
+	_maxHitPoints = FragTrap::get_defaultMaxHitPoints();
+	_energyPoints = NinjaTrap::get_defaultEnergyPoints();
+	_maxEnergyPoints = NinjaTrap::get_defaultMaxEnergyPoints();
+	_level = 1;
+	_name = name;
+	_meleeAttackDamage = NinjaTrap::get_defaultMeleeAttackDamage();
+	_rangedAttackDamage = FragTrap::get_defaultRangedAttackDamage();
+	_armorDamageReduction = FragTrap::get_defaultArmorDamageReduction();
 
 	std::cout << "SuperTrap 🤖 ";
-	std::cout << name << " constructed" << std::endl;
+	std::cout << name << " constructed :" << std::endl;
+
+	std::cout << "______________________" << std::endl;
+	std::cout << "HP_________________" << _hitPoints << std::endl;
+	std::cout << "max HP_____________" << _maxHitPoints << std::endl;
+	std::cout << "energy_____________" << _energyPoints << std::endl;
+	std::cout << "max energy_________" << _maxEnergyPoints << std::endl;
+	std::cout << "level________________" << _level << std::endl;
+	std::cout << "melee damage________" << _meleeAttackDamage << std::endl;
+	std::cout << "ranged damage_______" << _rangedAttackDamage << std::endl;
+	std::cout << "armor reduction______" << _armorDamageReduction << std::endl;
+	std::cout << "______________________" << std::endl;
 
 }
 

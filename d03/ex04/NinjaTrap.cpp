@@ -13,7 +13,7 @@ NinjaTrap::NinjaTrap() :
 }
 
 NinjaTrap::NinjaTrap(std::string name) : 
-	ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0) {
+	ClapTrap(60, 60, get_defaultEnergyPoints(), get_defaultMaxEnergyPoints(), 1, name, get_defaultMeleeAttackDamage(), 5, 0) {
 	std::cout << "INAC ";
 	std::cout << _name << " constructed" << std::endl;
 }
@@ -26,6 +26,21 @@ NinjaTrap::NinjaTrap( NinjaTrap const & src ) : ClapTrap(src) {
 NinjaTrap::~NinjaTrap() {
 	std::cout << "INAC ";
 	std::cout << _name << " destructed" << std::endl;
+}
+
+/********************/
+/* SPECIFIC GETTERS */
+/********************/
+int NinjaTrap::get_defaultEnergyPoints() const {
+	return (120);
+}
+
+int NinjaTrap::get_defaultMaxEnergyPoints() const {
+	return (120);
+}
+
+int NinjaTrap::get_defaultMeleeAttackDamage() const {
+	return (60);
 }
 
 /*************/

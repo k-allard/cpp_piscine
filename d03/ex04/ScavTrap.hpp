@@ -24,7 +24,7 @@ class	ScavTrap : public ClapTrap {
 		/**************/
 		void challengeNewcomer(FragTrap & newcomer) const;
 		void challengeNewcomer(NinjaTrap & newcomer) const;
-
+		void challengeNewcomer(SuperTrap & newcomer) const;
 };
 
 #endif

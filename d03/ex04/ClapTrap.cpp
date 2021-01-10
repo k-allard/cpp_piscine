@@ -13,7 +13,6 @@ ClapTrap::ClapTrap(std::string name) : _hitPoints(100),
 	std::cout << _name << ") constructed" << std::endl;
 }
 
-
 ClapTrap::ClapTrap(		
 	    int			hitPoints,
 		int 		maxHitPoints,

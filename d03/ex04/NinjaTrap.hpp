@@ -12,6 +12,13 @@ class	NinjaTrap : virtual public ClapTrap {
 		NinjaTrap( NinjaTrap const & src );
 		~NinjaTrap();
 
+		/********************/
+		/* SPECIFIC GETTERS */
+		/********************/
+		int get_defaultEnergyPoints() const ;
+		int get_defaultMaxEnergyPoints() const ;
+		int get_defaultMeleeAttackDamage() const ;
+
 		/*************/
 		/*  SHOEBOX  */
 		/*************/

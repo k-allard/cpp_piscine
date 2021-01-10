@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 15:44:04 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 16:29:54 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 FragTrap::FragTrap() : 
 	ClapTrap(100, 100, 50, 50, 1, "", 30, 20, 5) {
-	std::cout << "FR4G-TP ";
+	std::cout << "FR4G-TP 🤖 ";
 	std::cout << _name << " constructed" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : 
-	ClapTrap(100, 100, 50, 50, 1, name, 30, 20, 5) {
+	ClapTrap(get_defaultHitPoints(), get_defaultMaxHitPoints(), 50, 50, 1, name, 30, get_defaultRangedAttackDamage(), get_defaultArmorDamageReduction()) {
 	std::cout << "FR4G-TP ";
 	std::cout << _name << " constructed" << std::endl;
 }
@@ -36,6 +36,25 @@ FragTrap::FragTrap( FragTrap const & src ) : ClapTrap(src) {
 FragTrap::~FragTrap() {
 	std::cout << "FR4G-TP ";
 	std::cout << _name << " destructed" << std::endl;}
+
+/********************/
+/* SPECIFIC GETTERS */
+/********************/
+int FragTrap::get_defaultHitPoints() const {
+	return (100);
+}
+
+int FragTrap::get_defaultMaxHitPoints() const {
+	return (100);
+}
+
+int FragTrap::get_defaultRangedAttackDamage() const {
+	return (20);
+}
+
+int FragTrap::get_defaultArmorDamageReduction() const {
+	return (5);
+}
 
 /******************/
 /* CUSTOM ATTACKS */

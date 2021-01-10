@@ -1,6 +1,7 @@
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 #include "ClapTrap.hpp"
 
 #include <iostream>
@@ -106,4 +107,26 @@ void ScavTrap::challengeNewcomer(NinjaTrap & newcomer) const {
 			challenge5();
 			break;
 	}
+}
+
+void ScavTrap::challengeNewcomer(SuperTrap & newcomer) const {
+std::cout << "\033[3m< " << _name << ": > Newcomer ";
+std::cout << newcomer.get_name() << ", \033[0m";
+switch (getRandomIndex()) {
+	case 0:
+		challenge1();
+		break;
+	case 1:
+		challenge2();
+		break;
+	case 2:
+		challenge3();
+		break;
+	case 3:
+		challenge4();
+		break;
+	case 4:
+		challenge5();
+		break;
+}
 }

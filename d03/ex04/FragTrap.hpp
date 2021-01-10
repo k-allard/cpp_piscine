@@ -12,6 +12,14 @@ class	FragTrap : virtual public ClapTrap {
 		FragTrap();
 		FragTrap( FragTrap const & src );
 		~FragTrap();
+	
+		/********************/
+		/* SPECIFIC GETTERS */
+		/********************/
+		int get_defaultHitPoints() const ;
+		int get_defaultMaxHitPoints() const ;
+		int get_defaultRangedAttackDamage() const ;
+		int get_defaultArmorDamageReduction() const ;
 		
 		/******************/
 		/* CUSTOM ATTACKS */
