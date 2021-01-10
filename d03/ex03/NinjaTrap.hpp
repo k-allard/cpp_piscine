@@ -3,7 +3,7 @@
 
 #include <string>
 #include "ClapTrap.hpp"
-#include "commonHeader.hpp"
+#include "CommonHeader.hpp"
 
 class	NinjaTrap : public ClapTrap {
 	public:
@@ -14,10 +14,10 @@ class	NinjaTrap : public ClapTrap {
 		/*************/
 		/*  SHOEBOX  */
 		/*************/
-		void ninjaShoebox(FragTrap & target);
-		void ninjaShoebox(NinjaTrap & target);
-		void ninjaShoebox(ClapTrap & target);
-		void ninjaShoebox(ScavTrap & target);
+		int ninjaShoebox(FragTrap & target);
+		int ninjaShoebox(NinjaTrap & target);
+		int ninjaShoebox(ClapTrap & target);
+		int ninjaShoebox(ScavTrap & target);
 };
 
 #endif

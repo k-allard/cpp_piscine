@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/10 15:06:31 by kallard           #+#    #+#             */
+/*   Updated: 2021/01/10 15:11:10 by kallard          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std::string name) : _hitPoints(100),
@@ -9,10 +21,9 @@ ClapTrap::ClapTrap(std::string name) : _hitPoints(100),
 									_meleeAttackDamage(30),
 									_rangedAttackDamage(20),
 									_armorDamageReduction(5) {
-	std::cout << "CLAP-9000 ";
-	std::cout << _name << " constructed" << std::endl;
+	std::cout << "CLAP-9000 (parent for ";
+	std::cout << _name << ") constructed" << std::endl;
 }
-
 
 ClapTrap::ClapTrap(		
 	    int			hitPoints,
@@ -34,8 +45,8 @@ ClapTrap::ClapTrap(
 	_rangedAttackDamage(rangedAttackDamage),
 	_armorDamageReduction(armorDamageReduction) 
 									{
-	std::cout << "CLAP-9000 ";
-	std::cout << _name << " constructed" << std::endl;
+	std::cout << "CLAP-9000 (parent for ";
+	std::cout << _name << ") constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src ) {
@@ -45,8 +56,8 @@ ClapTrap::ClapTrap( ClapTrap const & src ) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "CLAP-9000 ";
-	std::cout << _name << " destructed" << std::endl;}
+	std::cout << "CLAP-9000 (parent for ";
+	std::cout << _name << ") destructed" << std::endl;}
 
 ClapTrap & ClapTrap::operator=( ClapTrap const & rhs ) {
 	std::cout << "Assignation operator called" << std::endl;
@@ -147,18 +158,40 @@ void ClapTrap::set_armorDamageReduction(int armorDamageReduction) {
 /*************/
 /* INTERFACE */
 /*************/
-void ClapTrap::rangedAttack(std::string const & target) {
+int ClapTrap::rangedAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 10) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << _name << " attacks " << target;
 	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
 	std::cout << " points of damage!" << std::endl;
 	_energyPoints -= 10;
+	return 1;
 }
 
-void ClapTrap::meleeAttack(std::string const & target) {
+int ClapTrap::meleeAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
 	std::cout << _name << " hits " << target;
 	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
 	std::cout << " points of damage!" << std::endl;
-	_energyPoints -= 5;
+	_energyPoints -= 15;
+	return 1;
 }
 
 void ClapTrap::takeDamage(unsigned int amount) {

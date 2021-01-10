@@ -1,7 +1,7 @@
 #ifndef FRAGTRAP_HPP
 # define FRAGTRAP_HPP
 
-#include "commonHeader.hpp"
+#include "CommonHeader.hpp"
 #include "ClapTrap.hpp"
 
 #include <string>
@@ -15,13 +15,8 @@ class	FragTrap : public ClapTrap {
 		/******************/
 		/* CUSTOM ATTACKS */
 		/******************/
-		void vaulthunter_dot_exe(std::string const & target);
-		void sweetAttack(std::string const & target);
-		void bulletnatorAttack(std::string const & target);
-		void funnyAttack(std::string const & target);
-		void purposeAttack(std::string const & target);
-		void scaryAttack(std::string const & target);
-		void awesomeAttack(std::string const & target);
+		int vaulthunter_dot_exe(std::string const & target);
+		void customAttack(std::string const & target);
 };
 
 #endif

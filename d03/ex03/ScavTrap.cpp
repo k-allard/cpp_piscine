@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/01/10 15:06:45 by kallard           #+#    #+#             */
+/*   Updated: 2021/01/10 15:09:31 by kallard          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
 #include "NinjaTrap.hpp"
@@ -8,7 +20,7 @@
 
 ScavTrap::ScavTrap(std::string name) : 
 	ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3) {
-	std::cout << "SC4V-TP ";
+	std::cout << "SC4V-TP 🤖 ";
 	std::cout << _name << " constructed" << std::endl;
 }
 

@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:27 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/09 23:35:41 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 15:19:56 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,148 +21,58 @@
 
 void rangedAttack(FragTrap &robot1, FragTrap &robot2)
 {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack at range, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.rangedAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_rangedAttackDamage());
+	if (robot1.rangedAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_rangedAttackDamage());
 }
 
 void rangedAttack(ScavTrap &robot1, FragTrap &robot2)
 {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack at range, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.rangedAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_rangedAttackDamage());
+	if (robot1.rangedAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_rangedAttackDamage());
 }
 
 void rangedAttack(FragTrap &robot1, ScavTrap &robot2)
 {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack at range, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.rangedAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_rangedAttackDamage());
+	if (robot1.rangedAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_rangedAttackDamage());
 }
 
 void rangedAttack(ScavTrap &robot1, ScavTrap &robot2)
 {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack at range, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.rangedAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_rangedAttackDamage());
+	if (robot1.rangedAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_rangedAttackDamage());
 }
 
 void meleeAttack(FragTrap &robot1, FragTrap &robot2) {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to melee attack, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.meleeAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_meleeAttackDamage());
+	if (robot1.meleeAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_meleeAttackDamage());
 }
 
 
 void meleeAttack(ScavTrap &robot1, FragTrap &robot2) {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to melee attack, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.meleeAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_meleeAttackDamage());
+	if (robot1.meleeAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_meleeAttackDamage());
 }
 
 void meleeAttack(FragTrap &robot1, ScavTrap &robot2) {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to melee attack, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.meleeAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_meleeAttackDamage());
+	if (robot1.meleeAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_meleeAttackDamage());
 }
 
 void meleeAttack(ScavTrap &robot1, ScavTrap &robot2) {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 15) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to melee attack, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.meleeAttack(robot2.get_name());
-	robot2.takeDamage(robot1.get_meleeAttackDamage());
+	if (robot1.meleeAttack(robot2.get_name()))
+		robot2.takeDamage(robot1.get_meleeAttackDamage());
 }
 
 void vaulthunter_dot_exe(FragTrap &robot1, FragTrap &robot2) {
-	if (robot1.get_hitPoints() == 0) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, but has no HP left"; 
-		std::cout << std::endl;
-		return ;
-	}
-	if (robot1.get_energyPoints() < 25) {
-		std::cout << " ❌ " << robot1.get_name() << " tried to attack, ";
-		std::cout << "but doesn't have enough energy points" << std::endl;
-		return ;
-	}
-	robot1.vaulthunter_dot_exe(robot2.get_name());
-	robot2.takeDamage(25);
+	if (robot1.vaulthunter_dot_exe(robot2.get_name()))
+		robot2.takeDamage(25);
 }
 
 int main( void ) {
 	srand(time(NULL));
 
-	// FragTrap Bob = FragTrap("Bob");
+	FragTrap Bob = FragTrap("Bob");
 	// FragTrap Sam = FragTrap("Sam");
 	// FragTrap Din = FragTrap("Din");
 	ScavTrap Lucy = ScavTrap("Lucy");
@@ -197,7 +107,10 @@ int main( void ) {
 	NinjaTrap Sally = NinjaTrap("Sally");
 	Lucy.challengeNewcomer(Sally);
 
-	Sally.ninjaShoebox(Lucy);
+	if (Sally.ninjaShoebox(Lucy))
+		Lucy.takeDamage(50);
+	if (Sally.ninjaShoebox(Bob))
+		Bob.takeDamage(50);
 
 	return 0;
 }

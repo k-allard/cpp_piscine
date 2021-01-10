@@ -1,7 +1,7 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "commonHeader.hpp"
+#include "CommonHeader.hpp"
 #include "ClapTrap.hpp"
 
 #include <string>
@@ -23,7 +23,6 @@ class	ScavTrap : public ClapTrap {
 		/**************/
 		void challengeNewcomer(FragTrap & newcomer) const;
 		void challengeNewcomer(NinjaTrap & newcomer) const;
-
 };
 
 #endif
