@@ -41,7 +41,6 @@ ScavTrap & ScavTrap::operator=( ScavTrap const & rhs ) {
 		this->set_rangedAttackDamage(rhs.get_rangedAttackDamage());
 		this->set_armorDamageReduction(rhs.get_armorDamageReduction());
 	}
-		
 	return *this;
 }
 
