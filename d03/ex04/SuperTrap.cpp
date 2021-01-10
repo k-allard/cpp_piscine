@@ -19,7 +19,7 @@ SuperTrap::SuperTrap(std::string name) : ClapTrap(name), NinjaTrap(name), FragTr
 	ClapTrap::set_rangedAttackDamage(FragTrap::get_rangedAttackDamage());
 	ClapTrap::set_armorDamageReduction(FragTrap::get_armorDamageReduction());
 
-	std::cout << "SuperTrap ";
+	std::cout << "SuperTrap 🤖 ";
 	std::cout << name << " constructed" << std::endl;
 
 }

@@ -9,8 +9,8 @@ ClapTrap::ClapTrap(std::string name) : _hitPoints(100),
 									_meleeAttackDamage(30),
 									_rangedAttackDamage(20),
 									_armorDamageReduction(5) {
-	std::cout << "CLAP-9000 ";
-	std::cout << _name << " constructed" << std::endl;
+	std::cout << "CLAP-9000 (parent for ";
+	std::cout << _name << ") constructed" << std::endl;
 }
 
 
@@ -34,8 +34,8 @@ ClapTrap::ClapTrap(
 	_rangedAttackDamage(rangedAttackDamage),
 	_armorDamageReduction(armorDamageReduction) 
 									{
-	std::cout << "CLAP-9000 ";
-	std::cout << _name << " constructed" << std::endl;
+	std::cout << "CLAP-9000 (parent for ";
+	std::cout << _name << ") constructed" << std::endl;
 }
 
 ClapTrap::ClapTrap( ClapTrap const & src ) {
@@ -45,8 +45,8 @@ ClapTrap::ClapTrap( ClapTrap const & src ) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "CLAP-9000 ";
-	std::cout << _name << " destructed" << std::endl;}
+	std::cout << "CLAP-9000 (parent for ";
+	std::cout << _name << ") destructed" << std::endl;}
 
 ClapTrap & ClapTrap::operator=( ClapTrap const & rhs ) {
 	std::cout << "Assignation operator called" << std::endl;

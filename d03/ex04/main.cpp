@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:27 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 00:27:45 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/10 15:39:55 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -164,7 +164,7 @@ int main( void ) {
 	srand(time(NULL));
 
 	// FragTrap Bob = FragTrap("Bob");
-	// FragTrap Sam = FragTrap("Sam");
+	FragTrap Sam = FragTrap("Sam");
 	// FragTrap Din = FragTrap("Din");
 	// ScavTrap Lucy = ScavTrap("Lucy");
 	
@@ -195,12 +195,13 @@ int main( void ) {
 	// FragTrap Rob = FragTrap("Rob");
 	// Lucy.challengeNewcomer(Rob);
 
-	// NinjaTrap Sally = NinjaTrap("Sally");
+	NinjaTrap Sally = NinjaTrap("Sally");
 	// Lucy.challengeNewcomer(Sally);
 
 	// Sally.ninjaShoebox(Lucy);
 
 	SuperTrap Jey = SuperTrap("Jey");
 
+	std::cout << "*****************\n* GAME FINISHED *\n*****************" << std::endl;
 	return 0;
 }
