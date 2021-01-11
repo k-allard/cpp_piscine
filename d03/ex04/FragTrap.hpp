@@ -24,6 +24,8 @@ class	FragTrap : virtual public ClapTrap {
 		/******************/
 		/* CUSTOM ATTACKS */
 		/******************/
+		int rangedAttack(std::string const & target);
+		int meleeAttack(std::string const & target);
 		int vaulthunter_dot_exe(std::string const & target);
 		void customAttack(std::string const & target);
 };

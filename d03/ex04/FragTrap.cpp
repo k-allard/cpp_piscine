@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/11 11:13:43 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 12:33:47 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,42 @@ int FragTrap::get_defaultArmorDamageReduction() const {
 /******************/
 /* CUSTOM ATTACKS */
 /******************/
+int FragTrap::rangedAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 10) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
+	std::cout << "FR4G-TP " << _name << " attacks " << target;
+	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
+	std::cout << " points of damage!" << std::endl;
+	_energyPoints -= 10;
+	return 1;
+}
+
+int FragTrap::meleeAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
+	std::cout << "FR4G-TP " << _name << " hits " << target;
+	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
+	std::cout << " points of damage!" << std::endl;
+	_energyPoints -= 15;
+	return 1;
+}
+
 void FragTrap::customAttack(std::string const & target) {
 	std::cout << "FR4G-TP " << _name << " attacks " << target;
 	std::cout << ", causing 25";

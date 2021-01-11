@@ -47,3 +47,11 @@ SuperTrap::~SuperTrap() {
 	std::cout << "SuperTrap ";
 	std::cout << FragTrap::get_name() << " destructed" << std::endl;
 }
+
+int SuperTrap::rangedAttack(std::string const & target) {
+	return (FragTrap::rangedAttack(target));
+}
+
+int SuperTrap::meleeAttack(std::string const & target) {
+	return (NinjaTrap::rangedAttack(target));
+}

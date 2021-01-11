@@ -12,6 +12,8 @@ class	NinjaTrap : virtual public ClapTrap {
 		NinjaTrap( NinjaTrap const & src );
 		~NinjaTrap();
 
+		int rangedAttack(std::string const & target);
+		int meleeAttack(std::string const & target);
 		/********************/
 		/* SPECIFIC GETTERS */
 		/********************/

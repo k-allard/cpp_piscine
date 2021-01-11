@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:27 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 14:39:13 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 13:41:43 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void vaulthunter_dot_exe(FragTrap &robot1, FragTrap &robot2) {
 
 int main( void ) {
 	srand(time(NULL));
+	std::cout << "\x1b[36m************\n*  FIGHT!  *\n************\x1b[0m" << std::endl;
 
 	FragTrap Bob = FragTrap("Bob");
 	FragTrap Sam = FragTrap("Sam");
@@ -101,5 +102,6 @@ int main( void ) {
 	FragTrap Rob = FragTrap("Rob");
 	Lucy.challengeNewcomer(Rob);
 
+	std::cout << "\x1b[36m*****************\n* GAME FINISHED *\n*****************\x1b[0m" << std::endl;
 	return 0;
 }

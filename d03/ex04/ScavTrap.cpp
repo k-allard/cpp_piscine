@@ -27,6 +27,42 @@ ScavTrap::~ScavTrap() {
 	std::cout << _name << " destructed" << std::endl;
 }
 
+int ScavTrap::rangedAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 10) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
+	std::cout << "SC4V-TP " << _name << " attacks " << target;
+	std::cout << " at range 🔫 , causing " << _rangedAttackDamage;
+	std::cout << " points of damage!" << std::endl;
+	_energyPoints -= 10;
+	return 1;
+}
+
+int ScavTrap::meleeAttack(std::string const & target) {
+	if (_hitPoints == 0) {
+		std::cout << " ❌ " << _name << " tried to attack, but has no HP left"; 
+		std::cout << std::endl;
+		return 0;
+	}
+	if (_energyPoints < 15) {
+		std::cout << " ❌ " << _name << " tried to attack at range, ";
+		std::cout << "but doesn't have enough energy points" << std::endl;
+		return 0;
+	}
+	std::cout << "SC4V-TP " << _name << " hits " << target;
+	std::cout << " with the melee attack 🗡️ , causing " << _meleeAttackDamage;
+	std::cout << " points of damage!" << std::endl;
+	_energyPoints -= 15;
+	return 1;
+}
+
 /**************/
 /* CHALLENGES */
 /**************/
