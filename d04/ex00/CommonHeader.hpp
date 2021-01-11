@@ -4,5 +4,6 @@
 class Sorcerer;
 class Victim;
 class Peon;
+class Seeker;
 
 #endif

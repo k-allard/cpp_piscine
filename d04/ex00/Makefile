@@ -1,6 +1,6 @@
 NAME = sorcerer
 
-SRCS = main.cpp Sorcerer.cpp Victim.cpp Peon.cpp
+SRCS = main.cpp Sorcerer.cpp Victim.cpp Peon.cpp Seeker.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
