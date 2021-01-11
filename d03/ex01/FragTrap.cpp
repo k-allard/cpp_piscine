@@ -6,13 +6,25 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 14:35:46 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 11:03:13 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 #include <string>
+
+FragTrap::FragTrap() : _hitPoints(0),
+					_maxHitPoints(0),
+					_energyPoints(0),
+					_maxEnergyPoints(0),
+					_level(0),
+					_name(""),
+					_meleeAttackDamage(0),
+					_rangedAttackDamage(0),
+					_armorDamageReduction(0) {
+	std::cout << "\x1b[31;1mFragTrap : default constructor called\033[0m" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : _hitPoints(100),
 									_maxHitPoints(100),

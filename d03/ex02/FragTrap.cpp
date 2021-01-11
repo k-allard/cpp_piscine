@@ -6,13 +6,17 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 14:47:46 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 11:05:55 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 #include <iostream>
 #include <string>
+
+FragTrap::FragTrap() {
+	std::cout << "\x1b[31;1mFragTrap : default constructor called\033[0m" << std::endl;
+}
 
 FragTrap::FragTrap(std::string name) : 
 	ClapTrap(100, 100, 50, 50, 1, name, 30, 20, 5) {

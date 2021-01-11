@@ -7,10 +7,8 @@
 #include <iostream>
 #include <string>
 
-ScavTrap::ScavTrap() : 
-	ClapTrap(100, 100, 50, 50, 1, "", 20, 15, 3) {
-	std::cout << "SC4V-TP ";
-	std::cout << _name << " constructed" << std::endl;
+ScavTrap::ScavTrap() {
+	std::cout << "\x1b[31;1mScavTrap : default constructor called\033[0m" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string name) : 

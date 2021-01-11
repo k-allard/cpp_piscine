@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 15:06:40 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 15:22:30 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 11:09:51 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 
 #include <iostream>
 #include <string>
+
+NinjaTrap::NinjaTrap() {
+	std::cout << "\x1b[31;1mNinjaTrap : default constructor called\033[0m" << std::endl;
+}
 
 NinjaTrap::NinjaTrap(std::string name) : 
 	ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0) {

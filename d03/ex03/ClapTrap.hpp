@@ -18,6 +18,7 @@ class	ClapTrap {
 		int			getRandomIndex() const;
 
 	public:
+		ClapTrap();
 		ClapTrap( std::string name );
 		ClapTrap(		
 			int			_hitPoints,

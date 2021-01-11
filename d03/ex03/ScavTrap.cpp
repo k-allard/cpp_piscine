@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 15:06:45 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 15:09:31 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 11:10:11 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 
 #include <iostream>
 #include <string>
+
+ScavTrap::ScavTrap() {
+	std::cout << "\x1b[31;1mScavTrap : default constructor called\033[0m" << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string name) : 
 	ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3) {

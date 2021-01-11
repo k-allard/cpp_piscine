@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 17:00:59 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 11:13:43 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,8 @@
 #include <iostream>
 #include <string>
 
-FragTrap::FragTrap() : 
-	ClapTrap(100, 100, 50, 50, 1, "", 30, 20, 5) {
-	std::cout << "FR4G-TP 🤖 ";
-	std::cout << _name << " constructed" << std::endl;
+FragTrap::FragTrap() {
+	std::cout << "\x1b[31;1mFragTrap : default constructor called\033[0m" << std::endl;
 }
 
 FragTrap::FragTrap(std::string name) : 

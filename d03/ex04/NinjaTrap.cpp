@@ -6,10 +6,8 @@
 #include <iostream>
 #include <string>
 
-NinjaTrap::NinjaTrap() : 
-	ClapTrap(60, 60, 120, 120, 1, "", 60, 5, 0) {
-	std::cout << "INAC ";
-	std::cout << _name << " constructed" << std::endl;
+NinjaTrap::NinjaTrap() {
+	std::cout << "\x1b[31;1mNinjaTrap : default constructor called\033[0m" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(std::string name) : 

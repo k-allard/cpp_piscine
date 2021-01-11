@@ -17,6 +17,7 @@ class	FragTrap {
 		int					getRandomIndex() const;
 
 	public:
+		FragTrap();
 		FragTrap( std::string name );
 		FragTrap( FragTrap const & src );
 		~FragTrap();

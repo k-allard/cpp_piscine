@@ -22,6 +22,7 @@ class	ScavTrap {
 		void		challenge4() const;
 		void		challenge5() const;
 	public:
+		ScavTrap();
 		ScavTrap( std::string name );
 		ScavTrap( ScavTrap const & src );
 		~ScavTrap();

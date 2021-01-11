@@ -7,6 +7,10 @@
 #include <iostream>
 #include <string>
 
+SuperTrap::SuperTrap() {
+	std::cout << "\x1b[31;1mSuperTrap : default constructor called\033[0m" << std::endl;
+}
+
 SuperTrap::SuperTrap(std::string name) : ClapTrap(name), NinjaTrap(name), FragTrap(name)
 {
 	_hitPoints = FragTrap::get_defaultHitPoints();

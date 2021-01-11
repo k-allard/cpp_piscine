@@ -16,6 +16,7 @@ class	FragTrap {
 		int					_armorDamageReduction; //Снижение урона оружия 
 		int					getRandomIndex() const;
 	public:
+		FragTrap();
 		FragTrap( std::string name );
 		FragTrap( FragTrap const & src );
 		~FragTrap();

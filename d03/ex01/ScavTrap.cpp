@@ -4,6 +4,18 @@
 #include <iostream>
 #include <string>
 
+ScavTrap::ScavTrap() : _hitPoints(0),
+					_maxHitPoints(0),
+					_energyPoints(0),
+					_maxEnergyPoints(0),
+					_level(0),
+					_name(""),
+					_meleeAttackDamage(0),
+					_rangedAttackDamage(0),
+					_armorDamageReduction(0) {
+	std::cout << "\x1b[31;1mScavTrap : default constructor called\033[0m" << std::endl;
+}
+
 ScavTrap::ScavTrap(std::string name) : _hitPoints(100),
 									_maxHitPoints(100),
 									_energyPoints(50),

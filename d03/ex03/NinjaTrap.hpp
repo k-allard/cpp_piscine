@@ -7,6 +7,7 @@
 
 class	NinjaTrap : public ClapTrap {
 	public:
+		NinjaTrap();
 		NinjaTrap( std::string name );
 		NinjaTrap( NinjaTrap const & src );
 		~NinjaTrap();

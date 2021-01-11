@@ -6,11 +6,23 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 15:06:31 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/10 15:11:10 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/11 11:08:05 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+
+ClapTrap::ClapTrap() : _hitPoints(0),
+					_maxHitPoints(0),
+					_energyPoints(0),
+					_maxEnergyPoints(0),
+					_level(0),
+					_name(""),
+					_meleeAttackDamage(0),
+					_rangedAttackDamage(0),
+					_armorDamageReduction(0) {
+	std::cout << "\x1b[31;1mClapTrap : default constructor called\033[0m" << std::endl;
+}
 
 ClapTrap::ClapTrap(std::string name) : _hitPoints(100),
 									_maxHitPoints(100),
