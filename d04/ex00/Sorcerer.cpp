@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/11 20:41:28 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/12 15:12:39 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ Sorcerer & Sorcerer::operator=( Sorcerer const & rhs ) {
 }
 
 std::ostream & operator<<( std::ostream & o, Sorcerer const & rhs) {
-	std::cout << "\033[3m— ";
+	o << "\033[3m— ";
 	o << "I am "<< rhs.get_name() << ", " << rhs.get_title() << ", and I like ponies!" << std::endl;
-	std::cout << "\033[0m";
+	o << "\033[0m";
 	return (o);
 }
 

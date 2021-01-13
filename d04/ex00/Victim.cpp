@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:21 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/11 19:32:28 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/12 15:02:23 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ Victim & Victim::operator=( Victim const & rhs ) {
 }
 
 std::ostream & operator<<( std::ostream & o, Victim const & rhs) {
-	std::cout << "\033[3m— ";
+	o << "\033[3m— ";
 	o << "I'm "<< rhs.get_name() << " and I like otters!" << std::endl;
-	std::cout << "\033[0m";
+	o << "\033[0m";
 	return (o);
 }
 

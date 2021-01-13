@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/04 13:37:27 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/11 21:28:19 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/12 16:07:38 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ int main( void ) {
 	Sorcerer robert("Robert", "the Magnificent");
 	Victim jim("Jimmy");
 	Peon joe("Joe");
-	Seeker tom("Tom");
+	// Seeker tom("Tom");
 	
-	std::cout << robert << jim << joe << tom;
+	std::cout << robert << jim << joe;// << tom;
 	robert.polymorph(jim); 
 	robert.polymorph(joe);
-	robert.polymorph(tom);
+	// robert.polymorph(tom);
 
 	return 0;
 }
