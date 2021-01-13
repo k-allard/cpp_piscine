@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 21:45:05 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/14 00:14:10 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/14 01:21:07 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ AssaultTerminator::AssaultTerminator() {
 }
 
 AssaultTerminator::~AssaultTerminator() { 
-	std::cout << "I’ll be back..." << std::endl; 
+	std::cout << "💀 I’ll be back..." << std::endl; 
 }
 
 AssaultTerminator::AssaultTerminator( AssaultTerminator const & ) {}

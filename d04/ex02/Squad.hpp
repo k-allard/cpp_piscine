@@ -20,8 +20,8 @@ class Squad : public ISquad {
 		/*************/
 		Squad();
 		virtual ~Squad();
-		Squad( Squad const & src );
-		Squad & operator=( Squad const & rhs );
+		Squad( ISquad const & src );
+		Squad & operator=( ISquad const & rhs );
 
 		/***********/
 		/* GETTERS */

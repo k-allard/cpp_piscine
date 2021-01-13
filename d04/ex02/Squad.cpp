@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 00:19:15 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/14 00:19:16 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/14 01:11:11 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,28 @@ Squad::~Squad() {
 	}
  }
 
-Squad::Squad( Squad const & ) {}
+Squad::Squad( ISquad const & src) :  _head(NULL), _numOfUnits(0) {
+	*this = src;
+}
 
-Squad & Squad::operator=( Squad const & rhs ) {	
-	_numOfUnits = rhs._numOfUnits;
-	_head = rhs._head;
-	return *this; 
+Squad & Squad::operator=( ISquad const & rhs ) {
+	t_squad *tmp = _head;
+	t_squad *tmp2;
+	while (_numOfUnits) {
+		tmp2 = tmp->next;
+		tmp->next = NULL;
+		delete tmp->unit;
+		delete tmp;
+		tmp = tmp2;
+		_numOfUnits--;
+	}
+	int n = rhs.getCount();
+	_head = NULL;
+	_numOfUnits = 0;
+	for (int i = 0; i < n; ++i) {
+		push(rhs.getUnit(i)->clone());
+	}
+	return *this;
 }
 
 /***********/

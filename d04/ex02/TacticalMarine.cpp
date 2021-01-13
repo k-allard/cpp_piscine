@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/14 00:19:35 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/14 00:20:05 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/14 01:21:10 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ TacticalMarine::TacticalMarine() {
 }
 
 TacticalMarine::~TacticalMarine() { 
-	std::cout << "Aaargh..." << std::endl; 
+	std::cout << "💀 Aaargh..." << std::endl; 
 }
 
 TacticalMarine::TacticalMarine( TacticalMarine const & ) {}
