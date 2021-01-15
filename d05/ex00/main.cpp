@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 11:32:09 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/15 13:21:24 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/15 23:51:56 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 		std::cout << Bob;			
 	}
 	catch (std::exception &e) {
-		std::cout << "Error ❌ " << std::endl;
+		std::cout << "❌ Error" << std::endl;
 	}
 	std::cout << "Creating bureaucrat with grade 151 . . ." << std::endl;
 	try {
@@ -29,29 +29,34 @@ int main()
 		std::cout << Tom;			
 	}
 	catch (std::exception &e) {
-		std::cout << "Error ❌ " << std::endl;
+		std::cout << "❌ Error" << std::endl;
 	}
 
-	std::cout << "Creating bureaucrat Sally with grade 2 . . ." << std::endl;
-	Bureaucrat Sally = Bureaucrat("Sally", 2);
-	std::cout << Sally;
-	std::cout << "Increasing Sally's grade from 2 to 0. . ." << std::endl;
 	try {
-		while (42)
-			Sally.incrementGrade();
+		std::cout << "Creating bureaucrat Sally with grade 2 . . ." << std::endl;		
+		Bureaucrat Sally = Bureaucrat("Sally", 2);
+		std::cout << Sally;
+		try {
+			std::cout << "Increasing Sally's grade from 2 to 0. . ." << std::endl;
+			while (42)
+				Sally.incrementGrade();
+		}
+		catch (std::exception &e) {
+			std::cout << "❌ Error in Sally.incrementGrade()" << std::endl;
+		}
+		std::cout << Sally;
+		try {
+			std::cout << "Decreasing Sally's grade from 1 to 151. . ." << std::endl;
+			while (42)
+				Sally.decrementGrade();
+		}
+		catch (std::exception &e) {
+			std::cout << "❌ Error in Sally.decrementGrade()" << std::endl;
+		}
+		std::cout << Sally << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << "Error ❌ " << std::endl;
+		std::cout << "❌ Error in creating Sally" << std::endl;
 	}
-	std::cout << Sally;
-	std::cout << "Decreasing Sally's grade from 1 to 151. . ." << std::endl;
-	try {
-		while (42)
-			Sally.decrementGrade();
-	}
-	catch (std::exception &e) {
-		std::cout << "Error ❌ " << std::endl;
-	}
-	std::cout << Sally << std::endl;
 	return (0);
 }

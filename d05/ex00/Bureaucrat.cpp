@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 00:11:55 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/15 13:24:30 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/15 23:54:09 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,13 @@
 /*************/
 /* COPLIENS' */
 /*************/
-Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name) {
+Bureaucrat::Bureaucrat(const std::string name, int grade) : 
+		_name(name), 
+		_grade(grade) {
 	if (grade < 1)
 		throw Bureaucrat::GradeTooHighException();
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
-	_grade = grade;
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const & src ) : 
@@ -60,6 +61,6 @@ void Bureaucrat::decrementGrade() {
 /* Stream insertion overload */
 /*****************************/
 std::ostream & operator<<( std::ostream & o, Bureaucrat const & rhs) {
-	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
+	o << "👩‍ " << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
 	return (o);
 }
