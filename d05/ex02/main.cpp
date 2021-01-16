@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/15 11:32:09 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/16 20:55:31 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/16 21:38:05 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-#define CLERK_GRADE 100
+#define CLERK_GRADE 72
 
 int main()
 {
-	PresidentialPardonForm PPF("Bob"); //sign 25, exec 5
-	RobotomyRequestForm RRF("bureaucracy"); //sign 72, exec 45
-	ShrubberyCreationForm SCF("trees"); //sign 145, exec 137
+	PresidentialPardonForm PPF("Bob");		//sign 25, exec 5
+	RobotomyRequestForm RRF("bureaucracy");	//sign 72, exec 45
+	ShrubberyCreationForm SCF("trees");		//sign 145, exec 137
 
 	try {
 		std::cout << "Creating bureaucrat Sally with grade " << CLERK_GRADE << " . . ." << std::endl;		
 		Bureaucrat Sally("Sally", CLERK_GRADE);
 		std::cout << "SUCCESS!\n" << Sally;
 
-			std::cout << "Trying to sign forms . . .\n";		
+			std::cout << "Trying to sign all forms . . .\n";		
 			Sally.signForm(PPF);
 			Sally.signForm(RRF);
 			Sally.signForm(SCF);
-
+			std::cout << "Trying to execute all forms . . .\n";		
 			Sally.executeForm(PPF);
 			Sally.executeForm(RRF);
 			// for (int i = 0; i < 5; i++)
