@@ -6,16 +6,11 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/16 21:56:34 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/17 00:33:59 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/17 00:41:50 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-
-/*******************************************************************/
-/* https://isocpp.org/wiki/faq/pointers-to-members#array-memfnptrs */
-/*******************************************************************/
-#define CALL_MEMBER_FN(ptrToMember)  (*(ptrToMember))
 
 /*************/
 /* COPLIENS' */
@@ -29,7 +24,6 @@ Intern::~Intern() { }
 /*************/
 /* INTERFACE */
 /*************/
-
 AForm *Intern::makeShrubberyCreationForm(const std::string &target) {
 	return (new ShrubberyCreationForm(target));
 }
@@ -42,8 +36,7 @@ AForm *Intern::makePresidentialPardonForm(const std::string &target) {
 	return (new PresidentialPardonForm(target));
 }
 
-int		Intern::getFunctionIndex(const std::string &name)
-{
+int		Intern::getFunctionIndex(const std::string &name) {
 	const std::string formsArray[] = {
 		"shrubbery creation",
 		"robotomy request",
