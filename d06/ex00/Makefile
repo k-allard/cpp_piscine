@@ -1,4 +1,4 @@
-NAME = d05_ex00
+NAME = convert
 
 SRCS = *.cpp
 
@@ -10,7 +10,7 @@ all: $(NAME)
 
 $(NAME):
 	clang++ -o $(NAME) $(SRCS) $(FLAGS)
-	@echo "\x1b[32m ./d05_ex00 is ready!\x1b[0m"
+	@echo "\x1b[32m ./$(NAME) is ready!\x1b[0m"
 
 clean:
 	@rm -rf $(OBJS)

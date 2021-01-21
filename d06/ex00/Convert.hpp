@@ -1,18 +1,20 @@
-#ifndef CONVERSION_HPP
-# define CONVERSION_HPP
+#ifndef CONVERT_HPP
+# define CONVERT_HPP
 
 #include <string>
+#include <sstream>
+#include <iostream>
 
 class Convert {
 	protected: 
-		typedef enum argumentTypeEnum
-		{
+		typedef enum	argumentTypeEnum {
 			intT,
 			doubleT,
 			floatT,
 			charT,
 			invalidT
-		}	argumentType;
+		}				argumentType;
+		argumentType	getArgumentType();
 
 		std::string		_str;
 		argumentType	_type;
@@ -21,11 +23,7 @@ class Convert {
 		float			floatV;
 		char			charV;
 		int				ifSpecial;
-		int				outOfRange;
-
-		void			checkInputString();
-		argumentType	getArgumentType();
-
+		int				exceptionFlag;
 
 	public:
 		/*************/
@@ -33,31 +31,35 @@ class Convert {
 		/*************/
 		Convert();
 		Convert(const char *str); 
-		Convert( Convert const & src );
-		Convert & operator=( Convert const & rhs );
+		Convert( Convert & src );
+		Convert & operator=( Convert & rhs );
 		~Convert();
 		
-
 		/*************/
 		/* INTERFACE */
 		/*************/
-		
-		std::string const asChar() const;
-		std::string const asInt() const;
-		std::string const asFloat() const;
-		std::string const asDouble() const;
 		void convertInput();
+		void asChar();
+		void asInt();
+		void asFloat();
+		void asDouble();
 		
 		/***********/
 		/* GETTERS */
 		/***********/
-
-		/**************/
-		/* EXCEPTIONS */
-		/**************/
-	
+		std::string		get_str();
+		argumentType	get_type();
+		int				get_intV();
+		double			get_doubleV();
+		float			get_floatV();
+		char			get_charV();
+		int				get_ifSpecial();
+		int				get_exceptionFlag();
 };
 
-std::ostream & operator<<( std::ostream & o, Convert const & rhs);
+/***************/
+/* << OVERLOAD */
+/***************/
+std::ostream & operator<<( std::ostream & o, Convert & rhs);
 
 #endif
