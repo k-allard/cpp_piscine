@@ -20,11 +20,11 @@ public:
 	typedef typename std::stack<T>::container_type::iterator iterator;
 	typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
 
-	iterator begin() {
+	// iterator begin() {
 		
-		return (this->c.begin());
-	}
-	//iterator begin();
+	// 	return (this->c.begin());
+	// }
+	iterator begin();
 
 	iterator end() {
 		return this->c.end();
@@ -38,5 +38,7 @@ public:
 		return this->c.rend();
 	}
 };
+
+#include "mutantstack.cpp"
 
 #endif

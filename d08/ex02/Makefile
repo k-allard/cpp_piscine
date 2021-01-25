@@ -1,6 +1,6 @@
 NAME = mutantStack
 
-SRCS = *.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
