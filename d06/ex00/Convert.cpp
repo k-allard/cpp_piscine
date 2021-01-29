@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/21 04:03:18 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/21 04:19:27 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/21 14:13:23 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ Convert::argumentType	Convert::getArgumentType() {
 	if (strLen == 1 && !std::isdigit(_str[0]))
 		return charT;
 	for (int i = 0; i < strLen; i++) {
-		if (!std::strchr("+-.f", _str[i]) && !std::isdigit(_str[0]))
+		if (!std::strchr("+-.f", _str[i]) && !std::isdigit(_str[i]))
 			return invalidT;
 	}
 	int i = 0;

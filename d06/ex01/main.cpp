@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 19:27:35 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/20 19:30:29 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/21 14:18:25 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ void *serialize(void) {
 
 Data *deserialize(void *raw) {
 	Data *data = new Data;
-	data->s1 = "";
-	char *charPtr = reinterpret_cast<char *>(raw);
 	data->s1 = std::string(static_cast<char *>(raw), 8);
 	data->n = *reinterpret_cast<int *>(static_cast<char *>(raw) + 8);
 	data->s2 = std::string(static_cast<char *>(raw) + 12, 8);

@@ -4,7 +4,7 @@ SRCS = *.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
-FLAGS =-std=c++98 -Wall -Wextra -Werror
+FLAGS =-g -std=c++98 -Wall -Wextra -Werror
 
 all: $(NAME)
 

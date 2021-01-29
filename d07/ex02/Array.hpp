@@ -1,9 +1,9 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
-#include <iostream>
-// <stdexcept> ??
 
-template<class T> //// это шаблон класса с T вместо фактического (передаваемого) типа данных
+#include <iostream>
+
+template<class T>
 class Array {
 private:
 	int			_length;

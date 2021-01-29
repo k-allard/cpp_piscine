@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 13:47:26 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/25 19:49:24 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/26 11:35:11 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ int Span::longestSpan() {
 
 void Span::printSet() {
 	std::multiset<int>::iterator it = _mSet.begin();
+	std::cout << _mSet.max_size() << std::endl;
 	while (it != _mSet.end())  {
 		std::cout << *it << " | ";
 		it++;

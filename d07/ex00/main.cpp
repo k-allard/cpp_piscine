@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 20:21:14 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/21 00:33:17 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/21 15:42:38 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ std::ostream & operator<<( std::ostream & o, Awesome const & src) {
 	return (o);
 }
 
-
 int main( void ) {
 	std::cout << "********* subject tests 1 *********" << std::endl;
 
@@ -55,7 +54,7 @@ int main( void ) {
  
 	char c1 = 'v';
 	char c2 = '+';
-	 std::cout << std::endl << c1 << " | " << c2 << std::endl;
+	std::cout << std::endl << c1 << " | " << c2 << std::endl;
 	::swap(c1, c2);
 	std::cout << "After swap :" << std::endl;
     std::cout << c1 << " | " << c2 << std::endl;

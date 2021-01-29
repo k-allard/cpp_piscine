@@ -6,7 +6,7 @@
 /*   By: kallard <kallard@student.21-school.ru>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 20:21:14 by kallard           #+#    #+#             */
-/*   Updated: 2021/01/21 00:47:57 by kallard          ###   ########.fr       */
+/*   Updated: 2021/01/21 16:19:51 by kallard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ std::ostream & operator<<( std::ostream & o, Awesome const & rhs ) { o << rhs.ge
 template< typename T >
 void print( T const & x ) { std::cout << x << std::endl; return; }
 
-void	to_upper_int(int &ch) {
+void	increment_int(int &ch) {
 		ch++;
 }
 
@@ -52,7 +52,7 @@ int main() {
 	}
 	std::cout << "\"" << std::endl;
     std::cout << "iter() . . .\n";
-    ::iter(array2, 5, to_upper_int);
+    ::iter(array2, 5, increment_int);
     std::cout << "Array after : \"";
 		for (int i = 0; i < 5; i++) {
 		std::cout << array2[i];
