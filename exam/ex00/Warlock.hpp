@@ -1,10 +1,11 @@
 #pragma once
 #include <string>
-class Warlock
-{
+
+class Warlock {
 private:
 	std::string name;
 	std::string title;
+
 public:
 	Warlock();
 	~Warlock();
@@ -17,7 +18,6 @@ public:
 	std::string const & getTitle() const ;
 
 	void setTitle(std::string const & t);
-	
-	void introduce() const;
 
+	void introduce() const;
 };
